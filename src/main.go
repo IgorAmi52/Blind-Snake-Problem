@@ -29,12 +29,12 @@ func main(){
 			
 			engine := engine.NewEngine(1,10,false) // just a holder
 			for pair := range ch {
-				engine.SetNewGame(pair[0], pair[1], true)
+				engine.SetNewGame(pair[0], pair[1], false)
 				status, move_count := engine.Play()
 				if status {
 					S := pair[0] * pair[1]
 					passed_count++
-					fmt.Printf("Pass for %d x %d, with %.2f * S moves \n", pair[0], pair[1], float64(move_count)/float64(S))
+					fmt.Printf("Pass for %d x %d, with %.2f x S moves \n", pair[0], pair[1], float64(move_count)/float64(S))
 					if float64(move_count)/float64(S) > float64(worst_move_usage){
 						worst_move_usage = float64(move_count)/float64(S)
 					}
@@ -47,7 +47,7 @@ func main(){
 	}
 	wg.Wait()
 
-	fmt.Printf("Passed: %d, Failed: %d\n", passed_count, faild_count)
+	fmt.Printf("\nPassed: %d, Failed: %d\n", passed_count, faild_count)
 	fmt.Printf("Sucess rate: %.2f\n", float64(passed_count)/float64(passed_count+faild_count))
-	fmt.Printf("Worst move usage: %.2f * S\n", worst_move_usage)	
+	fmt.Printf("Worst move usage: %.2f x S\n", worst_move_usage)	
 }
