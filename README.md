@@ -113,7 +113,7 @@ This alternative strategy involves moving in a circular or spray-like pattern (f
 
 **Cons:**
 - On rectangular boards where \( A \) and \( B \) differ significantly, the repetition rate increases dramatically.  
-- In the worst-case scenario (e.g.,  A=1 and B=S), it would require S×(S+1)/2 moves to win. This results in a time complexity of O(S^2), which exceeds the task's limitations.  
+- In the worst-case scenario (e.g.,  A=1 and B=S), it would require approximately S×(S+1)/2 moves to win. This results in a time complexity of O(S^2), which exceeds the task's limitations.  
 
 --- 
 
